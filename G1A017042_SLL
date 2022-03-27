@@ -1,0 +1,50 @@
+#include <iostream>
+
+using namespace std;
+
+struct Penduduk{
+ string nama, kelamin, asal, umur;
+ Penduduk *next;
+
+};
+
+int main (){
+
+   Penduduk *civil1, *civil2, *civil3;
+
+    civil1 = new Penduduk();
+    civil2 = new Penduduk();
+    civil3 = new Penduduk();
+
+    civil1->nama = "Nehemia";
+    civil1->kelamin = "Laki - laki";
+    civil1->asal = "Sumedang";
+    civil1->umur = "18 tahun";
+    civil1->next = civil2;
+
+    civil2->nama = "Jono";
+    civil2->kelamin = "Laki - Laki";
+    civil2->asal = "Banten";
+    civil2->umur = "20 tahun";
+    civil2->next = civil3;
+
+    civil3->nama = "Yuni";
+    civil3->kelamin = "Perempuan";
+    civil3->asal = "Solo";
+    civil3->umur = "19 tahun";
+    civil3->next = NULL;
+
+    Penduduk *cur;
+    cur = civil1;
+    while( cur != NULL ) {
+        cout << "Nama Penduduk :" << cur->nama << endl;
+        cout << "Jenis Kelamin  :" << cur->kelamin << endl;
+        cout << "Asal Daerah  :" << cur->asal << endl;
+        cout << "Umur Penduduk :"<<cur->umur<<endl;
+
+        cur = cur->next;
+
+    }
+
+
+}
